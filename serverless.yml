@@ -1,0 +1,37 @@
+service: rs-doctors-back
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-west-3
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - Fn::GetAtt: [ DoctorsTable, Arn ]
+  environment:
+    DOCTORS_TABLE: ${self:custom.doctorsTable}
+
+custom:
+  doctorsTable: doctors-table
+
+plugins:
+  - serverless-offline
+  - serverless-esbuild
+
+# Services
+functions:
+  - ${file(./sls/services/doctors.yml)}
+  - ${file(./sls/services/patients.yml)}
+
+resources:
+  - ${file(./sls/resources/dynamo.yml)}

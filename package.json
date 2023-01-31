@@ -1,0 +1,21 @@
+{
+  "name": "rs-doctors-back",
+  "version": "0.0.1",
+  "description": "RS doctors back-end services",
+  "author": "Alien team",
+  "license": "MIT",
+  "scripts": {
+    "start": "sls offline start --reloadHandler",
+    "deploy": "sls deploy"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.110",
+    "esbuild": "^0.16",
+    "serverless-dynamodb-local": "^0.2.40",
+    "serverless-esbuild": "1.37.3",
+    "serverless-offline": "^12.0.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1305.0"
+  }
+}
