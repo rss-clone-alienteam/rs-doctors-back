@@ -5,6 +5,7 @@
   "author": "Alien team",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint --config ./.eslintrc \"./**/*.ts\"",
     "start": "sls offline start --reloadHandler",
     "deploy": "sls deploy"
   },
