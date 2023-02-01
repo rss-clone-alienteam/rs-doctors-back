@@ -1,0 +1,26 @@
+{
+  "root": true,
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "project": "tsconfig.eslint.json"
+  },
+  "plugins": ["@typescript-eslint", "import"],
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": ["warn"]
+  }
+}
