@@ -5,6 +5,7 @@ provider:
   name: aws
   runtime: nodejs18.x
   region: eu-west-3
+  stage: ${opt:stage, 'dev'}
   iam:
     role:
       statements:
@@ -22,7 +23,7 @@ provider:
     DOCTORS_TABLE: ${self:custom.doctorsTable}
 
 custom:
-  doctorsTable: doctors-table
+  doctorsTable: doctors-table-${self:provider.stage}
 
 plugins:
   - serverless-offline

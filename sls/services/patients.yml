@@ -1,6 +1,5 @@
 getPatients:
   handler: src/services/patients/get-patients/index.handler
-  name: get-patients-lambda
   events:
     - httpApi:
         path: /patients/get-patients

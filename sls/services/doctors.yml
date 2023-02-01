@@ -1,6 +1,5 @@
 getDoctors:
   handler: src/services/doctors/get-doctors/index.handler
-  name: get-doctors-lambda
   events:
     - httpApi:
         path: /doctors/get-doctors
