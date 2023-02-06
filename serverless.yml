@@ -19,11 +19,30 @@ provider:
             - dynamodb:DeleteItem
           Resource:
             - Fn::GetAtt: [ DoctorsTable, Arn ]
+  httpApi:
+    cors: true
+    authorizers:
+      serviceAuthorizer:
+        identitySource: $request.header.Authorization
+        issuerUrl:
+          Fn::Join:
+          - ''
+          - - 'https://cognito-idp.'
+            - '${opt:region, self:provider.region}'
+            - '.amazonaws.com/'
+            - Ref: CognitoUserPool
+        audience:
+          - Ref: CognitoUserPoolClient
   environment:
     DOCTORS_TABLE: ${self:custom.doctorsTable}
 
 custom:
+  esbuild:
+    exclude:
+      - '@aws-sdk/*'
   doctorsTable: doctors-table-${self:provider.stage}
+  userPool: user-pool-${self:provider.stage}
+  userClient: user-client-${self:provider.stage}
 
 plugins:
   - serverless-offline
@@ -36,3 +55,4 @@ functions:
 
 resources:
   - ${file(./sls/resources/dynamo.yml)}
+  - ${file(./sls/resources/cognito.yml)}

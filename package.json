@@ -11,17 +11,20 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.110",
-    "esbuild": "^0.16",
-    "serverless-dynamodb-local": "^0.2.40",
-    "serverless-esbuild": "1.37.3",
-    "serverless-offline": "^12.0.4"
-  },
-  "dependencies": {
-    "aws-sdk": "^2.1305.0",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
+    "esbuild": "^0.16",
     "eslint": "^8.33.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "serverless-dynamodb-local": "^0.2.40",
+    "serverless-esbuild": "1.37.3",
+    "serverless-offline": "^12.0.4",
+    "serverless-plugin-typescript": "^2.1.4",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.264.0",
+    "@aws-sdk/lib-dynamodb": "^3.264.0"
   }
 }

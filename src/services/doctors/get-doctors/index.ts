@@ -3,6 +3,6 @@ import { APIGatewayProxyHandler } from 'aws-lambda';
 export const handler: APIGatewayProxyHandler = async () => {
   return {
     statusCode: 200,
-    body: JSON.stringify([1, 2, 3]),
+    body: JSON.stringify(['1', '2', '3']),
   };
 };
