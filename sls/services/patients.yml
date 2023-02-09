@@ -4,3 +4,10 @@ getPatients:
     - httpApi:
         path: /patients/get-patients
         method: get
+
+addPatient:
+  handler: src/services/patients/add-patient/index.handler
+  events:
+    - httpApi:
+        path: /patients/add-patient
+        method: post
