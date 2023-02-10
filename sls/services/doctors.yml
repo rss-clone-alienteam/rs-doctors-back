@@ -11,3 +11,10 @@ addDoctor:
     - httpApi:
         path: /doctors/add-doctor
         method: post
+
+getDoctor:
+  handler: src/services/doctors/get-doctor/index.handler
+  events:
+    - httpApi:
+        path: /doctors/get-doctor
+        method: get

@@ -5,13 +5,9 @@ Resources:
       AttributeDefinitions:
         - AttributeName: id
           AttributeType: S
-        - AttributeName: category
-          AttributeType: S
       KeySchema:
-        - AttributeName: category
-          KeyType: HASH
         - AttributeName: id
-          KeyType: RANGE
+          KeyType: HASH
       BillingMode: PAY_PER_REQUEST
       TableName: ${self:custom.doctorsTable}
 
