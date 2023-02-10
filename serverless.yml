@@ -19,6 +19,7 @@ provider:
             - dynamodb:DeleteItem
           Resource:
             - Fn::GetAtt: [ DoctorsTable, Arn ]
+            - Fn::GetAtt: [ PatientsTable, Arn ]
   httpApi:
     cors: true
     authorizers:
@@ -35,12 +36,14 @@ provider:
           - Ref: CognitoUserPoolClient
   environment:
     DOCTORS_TABLE: ${self:custom.doctorsTable}
+    PATIENTS_TABLE: ${self:custom.patientsTable}
 
 custom:
   esbuild:
     exclude:
       - '@aws-sdk/*'
   doctorsTable: doctors-table-${self:provider.stage}
+  patientsTable: patients-table-${self:provider.stage}
   userPool: user-pool-${self:provider.stage}
   userClient: user-client-${self:provider.stage}
 
