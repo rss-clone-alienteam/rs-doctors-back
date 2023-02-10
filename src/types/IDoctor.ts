@@ -1,4 +1,4 @@
-export default interface Doctor {
+export default interface IDoctor {
   id: string;
   name: string;
   surname: string;

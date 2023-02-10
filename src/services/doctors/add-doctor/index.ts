@@ -1,14 +1,14 @@
 import { APIGatewayProxyHandler } from 'aws-lambda';
 import { PutCommand } from '@aws-sdk/lib-dynamodb';
 import { ddbDocClient } from 'src/utils/aws/dynamo';
-import Doctor from 'src/types/types';
+import IDoctor from 'src/types/IDoctor';
 import { getBody } from 'src/utils/aws/lambda';
 import { getEnvVariable } from 'src/utils/runtime';
 
 const DOCTORS_TABLE = getEnvVariable('DOCTORS_TABLE');
 
 export const handler: APIGatewayProxyHandler = async (event) => {
-  const data = getBody<Doctor>(event);
+  const data = getBody<IDoctor>(event);
 
   const doctor = {
     id: data.id,
