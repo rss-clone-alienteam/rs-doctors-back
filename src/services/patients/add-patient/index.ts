@@ -12,6 +12,8 @@ export const handler: APIGatewayProxyHandler = async (event) => {
 
   const patient = {
     id: data.id,
+    name: data.name,
+    lastName: data.lastName,
     email: data.email,
     city: data.city,
   };
