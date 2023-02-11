@@ -6,9 +6,7 @@ import { getEnvVariable } from 'src/utils/runtime';
 const DOCTORS_TABLE = getEnvVariable('DOCTORS_TABLE');
 
 export const handler: APIGatewayProxyHandler = async (event) => {
-  const id = event.queryStringParameters
-    ? event.queryStringParameters.id
-    : '';
+  const id = event?.pathParameters?.id;
 
   const params = {
     TableName: DOCTORS_TABLE,
