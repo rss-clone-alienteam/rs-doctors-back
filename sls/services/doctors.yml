@@ -16,5 +16,20 @@ getDoctor:
   handler: src/services/doctors/get-doctor/index.handler
   events:
     - httpApi:
-        path: /doctors/get-doctor
+        path: /doctors/get-doctor/{id}
         method: get
+        request:
+          parameters:
+             paths:
+               id: true
+
+updateDoctor:
+  handler: src/services/doctors/update-doctor/index.handler
+  events:
+    - httpApi:
+        path: /doctors/update-doctor/{id}
+        method: patch
+        request:
+          parameters:
+             paths:
+               id: true

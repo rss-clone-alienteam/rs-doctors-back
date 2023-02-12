@@ -12,11 +12,12 @@ export const handler: APIGatewayProxyHandler = async (event) => {
 
   const doctor = {
     id: data.id,
-    name: data.name,
+    nameDoctor: data.name,
     surname: data.surname,
     category: data.category,
     email: data.email,
     city: data.city,
+    photo: '',
     address: '',
     phone: '',
     education: '',
@@ -26,6 +27,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     paymentMethod: '',
     aboutMe: '',
     languages: '',
+    reviews: [],
   };
 
   const params = {
