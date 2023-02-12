@@ -11,3 +11,14 @@ addPatient:
     - httpApi:
         path: /patients/add-patient
         method: post
+
+getPatient:
+  handler: src/services/patients/get-patient/index.handler
+  events:
+    - httpApi:
+        path: /patients/get-patient/{id}
+        method: get
+        request:
+          parameters:
+             paths:
+               id: true
