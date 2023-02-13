@@ -1,10 +1,3 @@
-getPatients:
-  handler: src/services/patients/get-patients/index.handler
-  events:
-    - httpApi:
-        path: /patients/get-patients
-        method: get
-
 addPatient:
   handler: src/services/patients/add-patient/index.handler
   events:
@@ -18,7 +11,3 @@ getPatient:
     - httpApi:
         path: /patients/get-patient/{id}
         method: get
-        request:
-          parameters:
-             paths:
-               id: true
