@@ -18,10 +18,6 @@ getDoctor:
     - httpApi:
         path: /doctors/get-doctor/{id}
         method: get
-        request:
-          parameters:
-             paths:
-               id: true
 
 updateDoctor:
   handler: src/services/doctors/update-doctor/index.handler
@@ -29,7 +25,3 @@ updateDoctor:
     - httpApi:
         path: /doctors/update-doctor/{id}
         method: patch
-        request:
-          parameters:
-             paths:
-               id: true

@@ -46,6 +46,8 @@ custom:
   patientsTable: patients-table-${self:provider.stage}
   userPool: user-pool-${self:provider.stage}
   userClient: user-client-${self:provider.stage}
+  attachmentsBucket: doctors-attachments-s3-bucket-${self:provider.stage}
+  identityPool: doctors-identity-pool-${self:provider.stage}
 
 plugins:
   - serverless-offline
@@ -59,3 +61,4 @@ functions:
 resources:
   - ${file(./sls/resources/dynamo.yml)}
   - ${file(./sls/resources/cognito.yml)}
+  - ${file(./sls/resources/s3.yml)}
