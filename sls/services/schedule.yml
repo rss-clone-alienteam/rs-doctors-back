@@ -1,0 +1,13 @@
+addSchedule:
+  handler: src/services/schedule/add-schedule/index.handler
+  events:
+    - httpApi:
+        path: /schedule/add-schedule
+        method: post
+
+getSchedule:
+  handler: src/services/schedule/get-schedule/index.handler
+  events:
+    - httpApi:
+        path: /schedule/get-schedule/{id}
+        method: get
