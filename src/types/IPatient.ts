@@ -1,3 +1,8 @@
+export type Appointment = {
+  doctorID: string;
+  time: string;
+};
+
 export default interface IPatient {
   id: string;
   name: string;
@@ -5,4 +10,5 @@ export default interface IPatient {
   city: string;
   email: string;
   password: string;
+  appointments: Appointment[];
 }

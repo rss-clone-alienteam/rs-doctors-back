@@ -11,3 +11,10 @@ getPatient:
     - httpApi:
         path: /patients/get-patient/{id}
         method: get
+
+updatePatient:
+  handler: src/services/patients/update-patient/index.handler
+  events:
+    - httpApi:
+        path: /patients/update-patient/{id}
+        method: patch
