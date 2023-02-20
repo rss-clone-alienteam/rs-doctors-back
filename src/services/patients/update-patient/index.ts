@@ -9,16 +9,16 @@ import {
 import { getEnvVariable } from 'src/utils/runtime';
 import { Appointment } from 'src/types/IPatient';
 
-// interface IDataUpdate {
-//   appointments?: Appointment
-// }
+interface IDataUpdate {
+  appointments?: Array<Appointment>;
+}
 
 const PATIENTS_TABLE = getEnvVariable('PATIENTS_TABLE');
 
 export const handler: APIGatewayProxyHandler = async (event) => {
   const id = event?.pathParameters?.id;
 
-  const updateInfo = getBody<Appointment>(event);
+  const updateInfo = getBody<IDataUpdate>(event);
 
   const UpdateExpression = getUpdateExpression(updateInfo);
   const ExpressionAttributeValues = getUpdateValues(updateInfo);
