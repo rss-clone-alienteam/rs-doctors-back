@@ -1,5 +1,6 @@
 export type Appointment = {
   doctorID: string;
+  day: string;
   time: string;
 };
 
