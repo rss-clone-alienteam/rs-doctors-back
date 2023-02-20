@@ -10,5 +10,5 @@ export default interface IPatient {
   city: string;
   email: string;
   password: string;
-  appointments: Appointment[];
+  appointments: Array<Appointment>;
 }
