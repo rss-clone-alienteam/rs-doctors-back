@@ -18,3 +18,10 @@ updatePatient:
     - httpApi:
         path: /patients/update-patient/{id}
         method: patch
+
+deletePatient:
+  handler: src/services/patients/delete-patient/index.handler
+  events:
+    - httpApi:
+        path: /patients/delete-patient/{id}
+        method: delete
