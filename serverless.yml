@@ -21,6 +21,12 @@ provider:
             - Fn::GetAtt: [ DoctorsTable, Arn ]
             - Fn::GetAtt: [ PatientsTable, Arn ]
             - Fn::GetAtt: [ ScheduleTable, Arn ]
+        - Effect: "Allow"
+          Action:
+            - "cognito-idp:AdminDeleteUser"
+          Resource:
+            - "*"
+
   httpApi:
     cors: true
     authorizers:
@@ -39,6 +45,8 @@ provider:
     DOCTORS_TABLE: ${self:custom.doctorsTable}
     PATIENTS_TABLE: ${self:custom.patientsTable}
     SCHEDULE_TABLE: ${self:custom.scheduleTable}
+    USER_POOL_ID:
+      Ref: CognitoUserPool
 
 custom:
   esbuild:

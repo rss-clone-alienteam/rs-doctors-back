@@ -25,3 +25,10 @@ updateDoctor:
     - httpApi:
         path: /doctors/update-doctor/{id}
         method: patch
+
+deleteDoctor:
+  handler: src/services/doctors/delete-doctor/index.handler
+  events:
+    - httpApi:
+        path: /doctors/delete-doctor/{id}
+        method: delete
