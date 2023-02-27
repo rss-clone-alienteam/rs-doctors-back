@@ -18,7 +18,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     email: data.email,
     city: data.city,
     photo: '',
-    address: '',
+    address: data.city,
     phone: '',
     education: '',
     experience: '',
